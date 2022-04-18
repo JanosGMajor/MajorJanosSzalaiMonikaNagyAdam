@@ -21,6 +21,7 @@ namespace Parkolo.Controllers
         }
 
         // GET: Keszletek
+        [Authorize]
         public async Task<IActionResult> Index(string AlvazSzamKeres, string TipusKeres)
         {
             var adatok = _context.Keszlet.Select(x => x);
@@ -45,6 +46,7 @@ namespace Parkolo.Controllers
         }
 
         // GET: Keszletek/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
